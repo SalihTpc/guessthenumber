@@ -4,11 +4,14 @@ const btn = document.getElementById("check-btn");
 const attempts = document.getElementById("number-attempts");
 const dpImg = document.getElementById("dead-pool");
 const guide = document.getElementById("guide");
-
+const myForm = document.getElementsByTagName("form");
 const randomNum = Math.floor(Math.random() * 100);
+
 let counter = 0;
+
 console.log(randomNum);
-function validation() {
+function validation(e) {
+  e.preventDefault();
   let num = numberInput.value;
   num = parseInt(num);
   console.log(typeof num);
@@ -22,7 +25,7 @@ function validation() {
       guide.innerHTML = "Congrats!";
       btn.style.display = "none";
       const replayBtn = document.createElement("button");
-      replayBtn.innerHTML = "Replay";
+      replayBtn.innerHTML = `Replay <i class="fas fa-play-circle"></i>`;
       replayBtn.classList.add("replay-btn");
       replayBtn.addEventListener("click", () => {
         location.reload();
@@ -35,8 +38,7 @@ function validation() {
       guide.innerHTML = "Closer, but you should decrease the number!";
     }
   }
+  numberInput.value = "";
 }
 
-btn.addEventListener("click", () => {
-  validation();
-});
+btn.addEventListener("click", validation);

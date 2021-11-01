@@ -6,11 +6,11 @@
 
 .container {
   height: 100vh;
-  background: rgb(81, 112, 223);
+  background: rgb(34, 193, 195);
   background: linear-gradient(
-    90deg,
-    rgba(81, 112, 223, 1) 0%,
-    rgba(32, 67, 189, 1) 100%
+    24deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
   );
   display: flex;
   flex-direction: column;
@@ -50,12 +50,26 @@
 }
 
 .replay-btn {
-  height: 40px;
-  width: 70px;
+  height: 70px;
+  width: 120px;
+  min-width: max-content;
+  min-height: max-content;
   border: none;
-  border-radius: 30px;
+  border-radius: 3rem;
   font-size: 1rem;
   cursor: pointer;
+  background: red;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 5%;
+}
+.replay-btn:hover {
+  background: black;
+  color: red;
+  transition: 0.3s;
 }
 
 #dead-pool {
@@ -63,4 +77,13 @@
   height: 300px;
   border-radius: 50%;
   display: none;
+}
+h3 {
+  font-size: xx-large;
+}
+p {
+  font-size: larger;
+}
+.fa-play-circle {
+  font-size: 2rem;
 }
